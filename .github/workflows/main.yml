@@ -1,4 +1,4 @@
-name: GitHub-Actions-CI
+name: GitHub-Actions
 env:
   App_Name    : "My_python"
   Package_Name: "version-${{ github.sha }}"
@@ -8,9 +8,14 @@ on:
     branches:
     - main
 jobs:
-  my-testing:
+  CI:
     runs-on: ubuntu-20.04
     
     steps:
-    - name: Git clone
+    - name: Git checkout
       uses: actions/checkout@v1
+    - name: Build
+      run : docker build -t web_app .
+    - name: azure acr
+      run : docker login pythonimages.azurecr.io
+      

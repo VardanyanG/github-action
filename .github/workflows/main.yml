@@ -20,7 +20,7 @@ jobs:
     - name: tag
       run: docker image tag pythonimages/webapp:${{ github.sha }}   ghcr.io/vardanyang/pythonimages/webapp:v2 
     - name: push
-      run : docker image push ghcr.io/vardanyang/pythonimages/webapp:v1
+      run : docker image push ghcr.io/vardanyang/pythonimages/webapp:v2
       
 
       

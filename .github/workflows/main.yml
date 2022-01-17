@@ -18,7 +18,7 @@ jobs:
     - name: Container Registery login
       run: | 
         echo ${{ secrets.GCR_TOKEN }} | docker login ghcr.io -u VardanyanG  --password-stdin 
-        docker image tag pythonimages/webapp:${{ github.sha }}  ghcr.io/VardanyanG/pythonimages/webapp:${{ github.sha }}
+        tr '[A-Z]' '[a-z]' | docker image tag pythonimages/webapp:${{ github.sha }}  ghcr.io/VardanyanG/pythonimages/webapp:${{ github.sha }}
         docker image push ghcr.io/VardanyanG/pythonimages/webapp:${{ github.sha }}
       
 

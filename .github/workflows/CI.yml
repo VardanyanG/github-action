@@ -6,7 +6,7 @@ on:
     branches:
     - main
 jobs:
-  CI:
+  CI-test:
     runs-on: self-hosted
     
     steps:

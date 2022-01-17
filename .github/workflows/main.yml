@@ -17,7 +17,7 @@ jobs:
       uses: azure/docker-login@v1
       with:
        username: ${{ secrets.ACR_USERNAME }}
-       password: ${{ secrets.ACR_USERNAME }}
+       password: ${{ secrets.ACR_PASSWORD }}
        login-server: pythonimages.azurecr.io
        run: |
           docker build . -t pythonimages.azurecr.io/webapp:${{ github.sha }}  

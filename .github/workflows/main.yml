@@ -17,7 +17,7 @@ jobs:
       #Azure ACR(Azure Container Registry) login
     - name: Container Registery login
       run: | 
-        echo "${{ GCR_TOKEN }}" | docker login ghcr.io -u VardanyanG  --password-stdin 
+        echo ${{ secret.GCR_TOKEN }} | docker login ghcr.io -u VardanyanG  --password-stdin 
         docker image tag pythonimages/webapp:${{ github.sha }}  ghcr.io/VardanyanG/pythonimages/webapp:${{ github.sha }}
         docker image push ghcr.io/VardanyanG/pythonimages/webapp:${{ github.sha }}
       

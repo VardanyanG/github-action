@@ -13,12 +13,14 @@ jobs:
     - name: Git checkout
       uses: actions/checkout@v1
       #Azure ACR(Azure Container Registry) login
-    - uses: azure/docker-login@v1
-      with:
-        login-server: pythonimages.azurecr.io
-        username: ${{ secrets.ACR_USERNAME }}
-        password: ${{ secrets.ACR_PASSWORD }}
-        run: |
+  #  - uses: azure/docker-login@v1
+  #    with:
+  #      login-server: pythonimages.azurecr.io
+   #     username: ${{ secrets.ACR_USERNAME }}
+   #     password:  ${{ secrets.ACR_USERNAME }}
+    - name: docker login
+      run: |
+          docker login --username  '${{ secrets.ACR_USERNAME }}' --password ' ${{ secrets.ACR_USERNAME }}'
           docker build . -t pythonimages.azurecr.io/webapp:${{ github.sha }}  
           docker push pythonimages.azurecr.io/webapp:${{ github.sha }}
       

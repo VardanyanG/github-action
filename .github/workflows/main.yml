@@ -16,10 +16,11 @@ jobs:
       run: docker build . -t pythonimages/webapp:${{ github.sha }} 
       #Azure ACR(Azure Container Registry) login
     - name: Container Registery login
-      run: | 
-        echo ${{ secrets.GCR_TOKEN }} | docker login ghcr.io -u VardanyanG  --password-stdin 
-        docker image tag pythonimages/webapp:v1  ghcr.io/vardanyang/pythonimages/webapp:v1 
-        docker image push ghcr.io/vardanyang/pythonimages/webapp:$v1
+      run: echo ${{ secrets.GCR_TOKEN }} | docker login ghcr.io -u VardanyanG  --password-stdin 
+    - name: tag
+      run: docker image tag pythonimages/webapp:v1  ghcr.io/vardanyang/webapp:v1 
+    - name: push
+      run : docker image push ghcr.io/vardanyang/webapp:v1
       
 
       

@@ -1,7 +1,5 @@
 name: GitHub-Actions
-env:
-  App_Name    : "My_python"
-  Package_Name: "version-${{ github.sha }}"
+
 
 on: 
   push:

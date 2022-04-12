@@ -9,7 +9,7 @@ on:
     - main
 jobs:
   CI:
-    runs-on: ubuntu-20.04
+    runs-on: self-hosted
     
     steps:
             - name: run

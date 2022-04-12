@@ -35,5 +35,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     steps:
-      - name: ls
-        run: ls -la
+      - name: deploy
+        run: cp -R app/dist/app /var/www/html

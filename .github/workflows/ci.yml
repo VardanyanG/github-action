@@ -28,6 +28,7 @@ jobs:
       - name: build
         run: |
           cd app
+          npm install
           ng build
 
 

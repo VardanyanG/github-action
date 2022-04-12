@@ -12,14 +12,14 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-  steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: install
-      run: npm install
-    - name: build
-      run: npm build
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+         node-version: ${{ matrix.node-version }}
+      - name: install
+        run: npm install
+      - name: build
+        run: npm build
 
 

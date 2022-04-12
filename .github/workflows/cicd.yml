@@ -36,6 +36,4 @@ jobs:
     needs: [build]
     steps:
       - name: deploy
-        run: | 
-          pwd
-          ls -la
+        run: cp -R app/* /var/www/html/ 

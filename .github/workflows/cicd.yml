@@ -42,4 +42,4 @@ jobs:
             echo "${{ secrets.key }}" > "$HOME/.ssh/key"
             chmod 400 "$HOME/.ssh/key"
         - name: deploy to server
-          run: cd app/dist/app rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . adminuser@20.126.31.212:/var/www/html
+          run:  rsync -a "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no"  adminuser@20.126.31.212:/var/www/html

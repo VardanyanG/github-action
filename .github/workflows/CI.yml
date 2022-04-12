@@ -9,11 +9,13 @@ on:
     - main
 jobs:
   CI:
-    runs-on: self-hosted
+    runs-on: ubuntu-20.04
     
     steps:
-            - name: run
-              run: ls
+            - name: clone
+              uses: actions/checkout@v1
+            - name: List folder
+              run : ls -la
       
       
 

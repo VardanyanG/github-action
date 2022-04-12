@@ -40,6 +40,6 @@ jobs:
             set -eu
             mkdir "$HOME/.ssh"
             echo "${{ secrets.key }}" > "$HOME/.ssh/authorized_keys"
-            chmod 400 "$HOME/.ssh/key"
+            chmod 400 "$HOME/.ssh/authorized_keys"
         - name: deploy to server
           run:  scp -r app/dist/app/*  adminuser@20.126.31.212:/var/www/html

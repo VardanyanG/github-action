@@ -36,4 +36,4 @@ jobs:
     needs: [build]
     steps:
       - name: deploy
-        run: cp -R app/dist/app/* /var/www/html/ 
+        run: rsync -a  app/dist/app/* ${{ secrets.SSH_USER }}@${{ secrets.PROD_HOST }}:/var/www/html/ 

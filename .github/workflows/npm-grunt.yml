@@ -1,0 +1,25 @@
+name: NodeJS with Grunt
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+
+  provisionProd:
+    name: Provision Prod
+    runs-on: ubuntu-latest
+    environment:
+      name: okopk
+    steps:
+    # Checkout
+    - name: Checkout
+      run: hello world
